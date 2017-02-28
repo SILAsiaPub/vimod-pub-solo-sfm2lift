@@ -3,7 +3,8 @@
 get variables                           ;projectvar
 source xml                              ;inputfile "%xmlsource%"
 remove nodes                            ;xslt generic-remove-nodes "removenodelist='%fields-to-remove%'"
-rename fields                           ;xslt project-rename-elements 
+rename fields                           ;xslt project-rename-elements
+reorder elements sn bw                  ;xslt generic-reorder-2nodes "serialnodes='sn bw'" 
 remove empty elements                   ;xslt generic-remove-empty-except "remove-except_list='%remove-except_list%' remove-empty_list='%remove-empty_list%'"
 group examples                          ;xslt generic-grouping-serial-nodes "serialnodes='%example-node_list%'"
 #group for sn                            ;xslt generic-grouping-serial-nodes "serialnodes='%out-of-place-node_list%'"
