@@ -51,7 +51,9 @@ The current setup does not handle sub-senses.
     *
     *
     *
+
 ## To Run the process
+
 * Start pub.cmd by double clicking on it from Windows Explorer. You should see the following
   * ![start screen](pub/docs/OpeningScreen.GIF)
   * If you don't see the above, check Java is installed as above.
