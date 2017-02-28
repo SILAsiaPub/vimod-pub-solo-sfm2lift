@@ -22,7 +22,7 @@ if "%PUBLIC%" == "C:\Users\Public" (
 echo.
 if not defined skipsettings echo                       Vimod-Pub Solo
 if not defined skipsettings echo     Various inputs multiple outputs digital publishing
-if not defined skipsettings echo       http://github.com/SILAsiaPub/vimod-pub-solo-sfm2lift
+if not defined skipsettings echo        http://github.com/SILAsiaPub/vimod-pub-solo
 echo    ----------------------------------------------------
 call :setup
 call :menu project.menu "Choose option?"
