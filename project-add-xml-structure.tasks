@@ -1,0 +1,20 @@
+# sfm2web-xml-structure.tasks   
+# modified 2014-04-11
+get variables                           ;projectvar
+source xml                              ;inputfile "%xmlsource%"
+remove nodes                            ;xslt generic-remove-nodes "removenodelist='%fields-to-remove%'"
+rename fields                           ;xslt project-rename-elements 
+remove empty elements                   ;xslt generic-remove-empty-except "remove-except_list='%remove-except_list%' remove-empty_list='%remove-empty_list%'"
+group examples                          ;xslt generic-grouping-serial-nodes "serialnodes='%example-node_list%'"
+#group for sn                            ;xslt generic-grouping-serial-nodes "serialnodes='%out-of-place-node_list%'"
+#remove examples with less than 2 nodes  ;xslt generic-remove-if-no-group "remove=xvGroup"
+group definitions                       ;xslt generic-grouping-serial-nodes "serialnodes='%definition-node_list%'"
+reorder hm and oint                     ;xslt generic-reorder-2nodes "serialnodes='%reorder-node_list%'"
+group se                                ;xslt generic-grouping-start-with-list "groupnodelist='se' parentnode='lxGroup'"
+group sn                                ;xslt generic-grouping-with-exclude "parentnode=lxGroup groupnode=%pos-node% excludelist='seGroup'"
+group sn inside of seGroup              ;xslt generic-grouping-with-exclude "parentnode=seGroup groupnode=%pos-node% excludelist=''"
+#group bw inside of lxGroup              ;xslt generic-grouping-with-exclude "parentnode=seGroup groupnode=bw excludelist='snGroup seGroup'"
+#group lf inside of lxGroup              ;xslt generic-grouping-with-exclude "parentnode=lxGroup groupnode=lf excludelist='snGroup seGroup'"
+# the following is not working
+#group nodes in lxGroup not in psGroup   ;xslt generic-grouping-serial-nodes-within-parent "serial-nodes_list='bw lf lv' parent-node_list='lxGroup'"
+output renamed                          ;outputfile "%projectpath%\xml\%iso%-b.xml"

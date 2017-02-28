@@ -1,0 +1,4 @@
+# change code pages
+get variables                           ;tasklist project.tasks
+var for iconv                           ;var iconv "pub\tools\iconv\iconv.exe"
+set input                               ;command2file "%iconv% -f Latin1 -t UTF-8 '%source-sfm-legacy%'" "%source-sfm-utf8%"

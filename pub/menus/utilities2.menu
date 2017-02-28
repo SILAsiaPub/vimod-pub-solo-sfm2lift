@@ -1,0 +1,15 @@
+# utilities.menu
+# modified to work with pub-combo
+#Create new Project            ;tasklist create-new-project.tasks
+#Spin off Group                ;tasklist group.tasks
+#Spin off This Project         ;tasklist spinoff-this-project.tasks
+#Spin off preset projects      ;tasklist spinoff-preset-project.tasks
+#Copy jre to spinoff           ;tasklist spinoff-copy-jre.tasks
+#Spin off Any Project          ;tasklist spinoff-project.tasks
+#Update PSPad DEF file         ;tasklist updatePSPadDEF.tasks
+Set UI feed back variables    ;menu user_feedback_settings.var "User UI settings"
+Set debug variables 1         ;menu function_debug_settings.var "User Debug 1 settings" 
+Set debug variables 2         ;menu function_debug_settings.var "User Debug 2 settings" "" 34
+Set debug variables 3         ;menu function_debug_settings.var "User Debug 3 settings" "" 68
+
+

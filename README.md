@@ -13,12 +13,32 @@ If you want to make multiple LIFT files, then it is best to use the structure in
       * change by removing the # and putting in your path to Java. i.e. replace the bit in [] brackets.
       * java=C:\[your-java-path]\bin\java.exe
        
-## To use this tool
+## To setup your project variables. The step not to skip.
 
 * Open the project.tasks file in the root of this project.
   * Edit the variables values in double quotes to suit your project. 
   * If your source is not UTF8 you must supply source-sfm-legacy variable. Do not edit the source-sfm-utf8 variable.
   * If you have a source in UTF8 already then edit source-sfm-utf8 variable.
+  * Edit the variable iso so your files are tagged accurately. But it is not essential as it is only used in naming.
+  * The fields-to-remove_list variable needs a space separated list of unwanted fields
+  * The element-rename_list variable is an array of space separated key=value pairs. You may not need this. If you don't then comment out with a # at the start of the line: rename fields ;xslt generic-rename-elements
+  * The element-lang_list variable is an array of space separated sfm=lang-code pairs. You will need to edit this for your project.
+  * The note-value-substitute_underscore-list variable is an array of underscore separated contraction=expanded-contraction pairs. You can use this in note fields to change contractions into full words (as you should in an electronic dictionary). Non matching entries just return the value unchanges.
+  * The form-element_list variable is a space separated list of elements that use the form element in LIFT. It may need aditions.
+  * The note-element_list variable is a space separated array of sfm=label pairs. In it you define which SFMs will be output as note elements in LIFT and what the labeling you want in the note. I.e bw bw=from produces From: Turkish in the output. 
+  * The relation-element_list variable is a space separated array of sfm=label pairs. In it you define which SFMs will be output as relation elements in LIFT and what the labeling you want in the relation. I.e sy=synonym produces Synonym: abba in the output with a link to abba.
+  * The pos-value-substitute_underscore-list  variable is an array of underscore separated contraction=expanded-contraction pairs. This is used to expand cryptic abreviations into full words. You should edit this.
+  * The gloss-element_list variable is a space separated list of definition sfm. It does not need changing unless you have more regional languages
+  * The definition-group-element_list is a space separated list of Group sfm. Will not neeed to change.
+
+* Open the project-add-xml-structure.tasks file in the root of the project
+  * If you do not need to rename any SFMs the comment out the line
+    * rename fields                           ;xslt generic-rename-elements
+    * Is should now look like this
+    * #rename fields                           ;xslt generic-rename-elements
+  * If you have no elements to reorder then comment out the following line by placing a # at the beginning of the line.
+    * reorder hm and oint                     ;xslt generic-reorder-2nodes "serialnodes='vr hm'"
+  * If you have more fields to reorder then duplicate the line and change the element names to reorder.
   * 
 * Start pub.cmd by double clicking on it from Windows Explorer. You should see the following
   * ![start screen](pub/resources/startscreen.GIF)

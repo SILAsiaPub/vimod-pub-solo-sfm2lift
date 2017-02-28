@@ -1,0 +1,51 @@
+# ==================================================================
+# dict2web project variables
+# 2014-10-24
+# you don't have to edit the line below but you should
+variable                                ;var iso "xxx"
+# If your source is not UTF8 you must supply this variable
+variable                                ;var source-sfm-legacy "%projectpath%\source\source.sfm"
+# If your source file is UTF8 start here. Change %iso%-utf8.sfm to the name of your file and put it in the source directory
+variable                                ;var source-sfm-utf8 "%projectpath%\source\%iso%-utf8.sfm"
+# Don't edit this next line
+variable                                ;var xmlsource "%projectpath%\source\%iso%.xml"
+
+# Structure variables
+remove if empty                         ;var removeempty_list "de dn dr ge gn xv xn xe xr rf"
+remove if empty exceptions              ;var except_list "se"
+
+# xml structure variables
+fields_to_remove                        ;var fields-to-remove "dt dl cet cm gm rf"
+elements to rename                      ;var element-rename_list "lont=lx2"
+remove if empty                         ;var remove-empty_list "de dn dr ge gn xv xn xe xr rf"
+remove if empty exceptions              ;var remove-except_list "se ps"
+example nodes                           ;var example-node_list "xv xn xe xr"
+out of place nodes                      ;var out-of-place-node_list "lf lv"
+definition nodes                        ;var definition-node_list "dn de dr"
+reorder nodes                           ;var reorder-node_list "lx2 hm"
+pos node sn or ps                       ;var pos-node "sn"
+
+# sfm2LIFT variables
+lexical node list                       ;var lexical-node_list "lx lx2 se"
+subentry group node                     ;var subentry-group-node "seGroup"
+variant node list                       ;var variant-node_list "va"
+example group                           ;var example-group-node_list "xvGroup exGroup"
+example-vern-node                       ;var example-vern-node "xv"
+Englisn lang name in other lang         ;var eng-lang-name_underscore-list "en=English_fr=Anglais_es=Inglés_pt=Inglês_bg=английски_rw=Icyongereza_id=Bahasa Inggris_zh-CHT=英文_zh-CHS=英文_km=?អង់គ្លេស"
+example translation node                ;var example-trans-node_list "xn xe xr"
+non-Eng lang array                      ;var non-eng-lang_list "id=Indonesian mak=Mangkasara bug=Buginese"
+key values array                        ;var element-lang_list "gn=id ge=en de=en dn=id va=mak lx2=bug bw=id cf=mak lx=mak lv=id nt=en ps=id se=mak xv=mak xn=id xe=en xr=xx "
+key value array source lang             ;var note-value-substitute_underscore-list "Arb=bahasa Arab_Ark=arkais/purba_Ark.=arkais/purba_BI=bahasa Indonesia_DT=Belanda (Dutch)_Tur=Turatea_KJ=Konjo"
+pos group                               ;var pos-group-node_list "snGroup psGroup"
+list of form elements                   ;var form-element_list "lx lx2 va xv xn xe xr se dn de dr"
+list of gloss elements                  ;var gloss-element_list "ge gn gr"
+list of definition group elements       ;var definition-group-element_list "deGroup dnGroup drGroup"
+list of note elements                   ;var note-element_list "nt=general na=anthropology nd=discourse ng=grammar np=phonology nq=questions ns=sociolinguistics mr=morphology bw=asal"
+key values array of relations           ;var relation-element_list "cf=lih sy=synonym an=antonym"
+key value array of part of speach       ;var pos-value-substitute_underscore-list "adj=adjektif_adv=adverba_Asal=asal kata_clf=klasifikator_det=determinator_dir=direksi_kasar=bicara kasar, kotor_konfiks=konfiks_konj=konjungsi_ksapa=kata sapa_kseru=kata seru_lihat=lihat_mode=modalitas_n=nomina_nama=nama orang, kota_num=nomor_p=preposisi_POS=posesif_pp=frase preposisi_pref=prefiks_pron=pronoina, permarkah persona_quan=quantitas_suf=sufiks_v=verba_Var.=varian_v, ki=verba, ki_num clf=nomor, klasifikator"
+groups not in psGroup but need it forDAB;var groups2sudo-pos_list "bwGroup lfGroup"
+main grouping                           ;var top-level-node_list "snGroup seGroup lf va bw cf"
+second grouping                         ;var second-level-node_list "snGroup lf va bw cf xvGroup"
+#post variant-node                       ;var post-variable-node_list "snGroup lfGroup bw xvGroup cf"
+#post variant-node                       ;var post-gloss-in-posgroup_list "snGroup lfGroup bw xvGroup cf"
+make project xslt                       ;projectxslt

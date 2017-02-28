@@ -1,0 +1,29 @@
+# user_installed.tools
+# =============================================================================
+# Essential tools
+# ------------------------------------------------------------------------------
+# Saxon9 http://saxon.sourceforge.net
+saxon9=pub\tools\saxon\saxon9he.jar
+
+# =============================================================================
+# Tools found in the path
+# ------------------------------------------------------------------------------
+#
+# Consistent Changes for Windows
+# http://www.sil.org/computing/catalog/show_software.asp?id=4
+# ccw32=ccw32
+# the above means that ccw32 is in the path and just needs to be called by a variable
+
+
+
+# =============================================================================
+# Tools not found in the path
+# ------------------------------------------------------------------------------
+# http://www.princexml.com
+prince=C:\Program Files (x86)\Prince\engine\bin\Prince.exe
+
+# http://www.java.com/en/download/
+# make an environment variable for it or uncomment the following line and adjust path
+# java=C:\Program Files\Java\jre8\bin\java.exe
+
+

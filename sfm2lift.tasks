@@ -1,0 +1,6 @@
+get var                                 ;projectvar
+get date                                ;date
+get time                                ;time
+input file                              ;inputfile "%projectpath%\xml\%iso%-b.xml"
+transform to lift                       ;xslt sfm2lift-mak
+name out put                            ;outputfile "%projectpath%\output\%iso%-%curisodate%T%curhhmmss%.lift"

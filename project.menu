@@ -1,0 +1,7 @@
+# project.menu
+Change code page              ;tasklist dict2web-change-codepage.tasks
+---------------               ;menublank
+Transform SFM to XML          ;tasklist dict2web-sfm2xml.tasks
+Structure xml                 ;tasklist project-add-xml-structure.tasks
+---------------               ;menublank
+Make LIFT                     ;tasklist sfm2lift.tasks
