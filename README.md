@@ -1,8 +1,10 @@
 # Vimod-Pub-solo-sfm2lift
+
 ## Make a LIFT file from MDF schema SFM file
 
-This project is set up to make one LIFT file. It makes use of the Vimod-Pub scripting menus and tasks. If you want to make multiple concordances this is not the best way to do it.
-If you want to make multiple LIFT files, then it is best to use the structure in Vimod-Pub project. https://github.com/SILAsiaPub/vimod-pub
+This project is set up to make one LIFT file. It makes use of the Vimod-Pub scripting menus and tasks. If you want to make multiple concordances this is not the best way to do it. If you want to make multiple LIFT files, then it is best to use the structure in Vimod-Pub project. https://github.com/SILAsiaPub/vimod-pub
+
+The current setup does not handle sub-senses.
 
 ## To setup this tool:
 * You must have iconv.exe installed in the subfolder pub\tools\iconv\bin. You can get this file from: http://gnuwin32.sourceforge.net/downlinks/libiconv-bin-zip.php
@@ -37,15 +39,23 @@ If you want to make multiple LIFT files, then it is best to use the structure in
     * Is should now look like this
     * #rename fields                           ;xslt generic-rename-elements
   * If you have no elements to reorder then comment out the following line by placing a # at the beginning of the line.
-    * reorder hm and oint                     ;xslt generic-reorder-2nodes "serialnodes='vr hm'"
-  * If you have more fields to reorder then duplicate the line and change the element names to reorder.
-  * 
+    * If you have more fields to reorder then duplicate the line and change the element names to reorder.
+    * The line following re orders the bw before the sn as it is a lexeme level comment. You write the one it will find first then the one to move to the front
+    * reorder elements sn bw                  ;xslt generic-reorder-2nodes "serialnodes='sn bw'" 
+  * Next is the line
+    * remove empty elements                   ;xslt generic-remove-empty-except "remove-except_list='%remove-except_list%' remove-empty_list='%remove-empty_list%'"
+    * This line removes empty fields except for the ones specified. sn may be one.
+    * Parameters come from the project.tasks
+    * More to come.
+    *
+    *
+    *
+    *
+## To Run the process
 * Start pub.cmd by double clicking on it from Windows Explorer. You should see the following
-  * ![start screen](pub/resources/startscreen.GIF)
+  * ![start screen](pub/docs/opeining-screen.GIF)
   * If you don't see the above, check Java is installed as above.
-* Type the letter a and press enter to move the files into the project.
+* Type the letter a and press enter to convert the legacy encoded SFM into UTF8
 * Now step through each of the other steps.
-* If you have a Yellow screen, something went wrong.Read what it says and try and fix it.
-* At the end of step e the PDF should open after a few minutes.
-
-It maybe that you need to adjust the CSS files to get the look you want. These are found in the css folder. If you adjust the css files you don't need to remake your HTML files just the PDF. But if you change your project.tasks file you do need to remake the HTML files before remaking the PDF.
+* If you have a Yellow screen, something went wrong. Read what it says and try and fix it.
+* At the end of step d the LIFT file is produced in the output folder.
