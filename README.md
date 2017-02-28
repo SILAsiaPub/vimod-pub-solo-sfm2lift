@@ -18,10 +18,11 @@ The current setup does not handle sub-senses.
 ## To setup your project variables. The step not to skip.
 
 * Open the project.tasks file in the root of this project.
+  * ![Project.tasks variables](pub/docs/projectvariables.gif)
+  * Edit the variable iso so your files are tagged accurately. But it is not essential as it is only used in naming.
   * Edit the variables values in double quotes to suit your project. 
   * If your source is not UTF8 you must supply source-sfm-legacy variable. Do not edit the source-sfm-utf8 variable.
   * If you have a source in UTF8 already then edit source-sfm-utf8 variable.
-  * Edit the variable iso so your files are tagged accurately. But it is not essential as it is only used in naming.
   * The fields-to-remove_list variable needs a space separated list of unwanted fields
   * The element-rename_list variable is an array of space separated key=value pairs. You may not need this. If you don't then comment out with a # at the start of the line: rename fields ;xslt generic-rename-elements
   * The element-lang_list variable is an array of space separated sfm=lang-code pairs. You will need to edit this for your project.
@@ -34,6 +35,7 @@ The current setup does not handle sub-senses.
   * The definition-group-element_list is a space separated list of Group sfm. Will not neeed to change.
 
 * Open the project-add-xml-structure.tasks file in the root of the project
+  * ![project-add-xml-structure.tasks](pub/docs/structurexml.gif)
   * If you do not need to rename any SFMs the comment out the line
     * rename fields                           ;xslt generic-rename-elements
     * Is should now look like this
