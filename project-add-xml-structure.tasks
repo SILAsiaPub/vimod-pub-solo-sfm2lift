@@ -7,7 +7,6 @@ rename fields                           ;xslt project-rename-elements
 reorder elements sn bw                  ;xslt generic-reorder-2nodes "serialnodes='sn bw'" 
 remove empty elements                   ;xslt generic-remove-empty-except "remove-except_list='%remove-except_list%' remove-empty_list='%remove-empty_list%'"
 group examples                          ;xslt generic-grouping-serial-nodes "serialnodes='%example-node_list%'"
-#group for sn                            ;xslt generic-grouping-serial-nodes "serialnodes='%out-of-place-node_list%'"
 #remove examples with less than 2 nodes  ;xslt generic-remove-if-no-group "remove=xvGroup"
 group definitions                       ;xslt generic-grouping-serial-nodes "serialnodes='%definition-node_list%'"
 reorder hm and oint                     ;xslt generic-reorder-2nodes "serialnodes='%reorder-node_list%'"
