@@ -1,6 +1,6 @@
 # ==================================================================
-# dict2web project variables
-# 2014-10-24
+# sfm2lift project variables
+# 2017-02-24
 # you don't have to edit the line below but you should
 variable                                ;var iso "xxx"
 # If your source is not UTF8 you must supply this variable
@@ -16,7 +16,7 @@ remove if empty exceptions              ;var except_list "se"
 
 # xml structure variables
 fields_to_remove                        ;var fields-to-remove "dt dl cet cm gm rf"
-elements to rename                      ;var element-rename_list "lont=lx2"
+elements to rename array                ;var element-rename_list "lont=lx2"
 remove if empty                         ;var remove-empty_list "de dn dr ge gn xv xn xe xr rf"
 remove if empty exceptions              ;var remove-except_list "se ps"
 example nodes                           ;var example-node_list "xv xn xe xr"
